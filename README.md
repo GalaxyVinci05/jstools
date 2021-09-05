@@ -1,5 +1,5 @@
 # JSTools
-###### Some very useful JavaScript tools that will help you when developing
+###### Some very useful JavaScript tools that will spare you many lines of code when developing. Written in TypeScript
 
 ### Features
 This package essentially includes:
@@ -7,25 +7,23 @@ This package essentially includes:
 > - Tools to manage strings
 > - Tools to get random results out of any type or a random boolean
 > - A tool to compare objects and arrays
-> - An ID generator
+> - A code generator
 
-### Getting started
-In order to use these tools in your project, just put the `jstools` folder (that you get when extracting the compressed file) wherever you like in your project, or you can also directly take the `jstools.js` file and put it in your project as it is.
+### Installation
+With **npm**:
 
-#### Basic usage
-_Also note that it's not a good idea to put `null` in most of these methods_
-##### Setup
-```js
-const JSTools = require('path/to/jstools/jstools.js');
-const jstools = new JSTools();
-```
+`npm i @galaxy05/jstools`
 
-##### Methods Examples
+With **yarn**:
+
+`yarn add @galaxy05/jstools`
+
+#### Basic usages
 ###### remove
 ```js
 function sample() {
-    const arr = ['this', 'is', 'an', 'array', 0, 7, 2, 7];
-    const newArr = jstools.remove('is', arr);
+    let arr = ['this', 'is', 'an', 'array', 0, 7, 2, 7];
+    arr = jstools.remove('is', arr);
 
     // output: ['this', 'an', 'array', 0, 7, 2, 7]
 }
@@ -33,10 +31,10 @@ function sample() {
 ###### replace
 ```js
 function sample() {
-    const arr = ['this', 'is', 'an', 'array', 0, 7, 2, 7];
-    const newArr = jstools.replace(['array', '7'], arr, 'replaced');
+    const arr = ['this', 'is', 'an', 'array', 0, 7, '7', 2, 7];
+    const newArr = jstools.replace(7, arr, 'replaced', { strict: true });
 
-    // output: ['this', 'is', 'an', 'replaced', 0, 'replaced', 2, 'replaced']
+    // output: ['this', 'is', 'an', 'array', 0, 'replaced', '7', 2, 'replaced']
 }
 ```
 ###### replaceStr
@@ -66,42 +64,44 @@ function sample() {
 function sample() {
     const isTrue = jstools.randomBool(0.25);
 
-    // outputs: random boolean (25% chances of getting true)
+    // outputs: random boolean (25% chances of returning true)
 }
 ```
 ###### objEquals
 ```js
 function sample() {
     const obj1 = {
-        cool: true
+        cool: 1
     };
 
     const obj2 = {
-        cool: true
+        cool: '1'
     };
 
     const isEqual = jstools.objEquals(obj1, obj2);
-    
-    // outputs: true, false if obj2 has different keys or values
+    // outputs: true
+
+    const isEqual = jstools.objEquals(obj1, obj2, { strict: true });
+    // outputs: false
 }
 ```
-###### generateID
+###### generateCode
 ```js
 function sample() {
     const numsId = jstools.generateID(12, {
         numsOnly: true
     });
 
-    // outputs: a random ID of only numbers like 741920148344
+    // outputs: a randomly generated string of only numbers like '741920148344'
 
     const charsId = jstools.generateID(16, {
         charsOnly: true
     });
 
-    // outputs: a random ID of only characters like fqcKdcMatKNHOFEL
+    // outputs: a randomly generated string of only characters like 'fqcKdcMatKNHOFEL'
 
     const id = jstools.generateID(24);
     
-    // outputs: a random ID like 45k15y1Yt9TO7vL61S4BlF0s
+    // outputs: a randomly generated string like '45k15y1Yt9TO7vL61S4BlF0s'
 }
 ```
