@@ -2,10 +2,10 @@
   "name": "@galaxy05/jstools",
   "version": "1.0.0",
   "description": "Some useful JS tools for development",
-  "types": "types/index.d.ts",
+  "typings": "types/index.d.ts",
   "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
