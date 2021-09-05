@@ -1,0 +1,24 @@
+{
+  "name": "@galaxy05/jstools",
+  "version": "1.0.0",
+  "description": "Some useful JS tools for development",
+  "types": "types/index.d.ts",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GalaxyVinci05/jstools.git"
+  },
+  "keywords": [
+    "JS",
+    "Tools"
+  ],
+  "author": "GalaxyVinci05",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GalaxyVinci05/jstools/issues"
+  },
+  "homepage": "https://github.com/GalaxyVinci05/jstools#readme"
+}
