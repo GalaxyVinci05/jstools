@@ -160,9 +160,7 @@ export function generateCode(length: number, options?: {
                 } else if (options?.lowerOnly) {
                     code += chars[random(chars.length)];
                 } else {
-                    let upper = this.randomBool();
-
-                    code += upper ? chars[random(chars.length)].toUpperCase() : chars[random(chars.length)];
+                    code += randomBool() ? chars[random(chars.length)].toUpperCase() : chars[random(chars.length)];
                 }
             } else {
                 code += random(10).toString();
